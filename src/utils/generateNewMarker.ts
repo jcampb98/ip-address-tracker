@@ -28,9 +28,7 @@ export const generateNewMarker =({ latitude, longitude, map }: MarkerProps) => {
     const markerElement = document.createElement("div");
     markerElement.className = "marker";
     markerElement.innerHTML = svgContent;
-    markerElement.style.width = '32px';
-    markerElement.style.height = '32px';
-    markerElement.style.backgroundPosition = 'center';
+    markerElement.style.border = '1px solid red';
 
     // Ensures that the marker element is visible
     markerElement.style.display = 'block';

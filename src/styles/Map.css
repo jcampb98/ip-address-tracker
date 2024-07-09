@@ -8,9 +8,13 @@
 }
 
 .marker {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    cursor: pointer;
+    z-index: 1000;
 }
 
 @media (max-width: 768px) {
