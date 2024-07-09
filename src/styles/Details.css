@@ -1,0 +1,49 @@
+.details-wrapper {
+    background-image: url("../../images/pattern-bg-desktop.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+}
+
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*
+.details-container {
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    padding: 10px;
+    background-color: #FFFFFF;
+}
+*/
+
+.details-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-right: 1px solid hsl(0, 0%, 17%);
+}
+
+.details-item:last-child {
+    border-right: none;
+}
+
+.details-title {
+    color: hsl(0, 0%, 59%);
+    margin-bottom: 5px;
+}
+
+.details-text {
+    color: hsl(0, 0%, 17%);
+}
