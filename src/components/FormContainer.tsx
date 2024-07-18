@@ -97,41 +97,46 @@ const FormContainer: React.FC<FormContainerProps> = ({ setIpData }) => {
     };
 
     return (
-        <div className="container">
-            <h4 className="title">IP Address Tracker</h4>
-            <Form className="input-group" validated={validated} onSubmit={handleSubmit}>
-                <Form.Control
-                    required
-                    onChange={handleChange}
-                    className="input-field" 
-                    type="text" 
-                    placeholder="Search for any IP address or domain" 
-                />
-                <button className="submit-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6"/></svg>
-                </button>
-            </Form>
-            {
-                showModal && 
-                <div className="modal">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title">Error</h5>
-                                <button className="btn-close" onClick={handleCloseModal}>X</button>
-                            </div>
-                            <div className="modal-body">
-                                {statusMessage}
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" onClick={handleCloseModal}>
-                                    Close
-                                </button>
+        <div className="component-main">
+            <picture className="background-image">
+                <img className="background-img" src="../../images/pattern-bg-desktop.png" alt="background image of squares" />
+            </picture>
+            <div className="container">
+                <h4 className="title">IP Address Tracker</h4>
+                <Form className="input-group" validated={validated} onSubmit={handleSubmit}>
+                    <Form.Control
+                        required
+                        onChange={handleChange}
+                        className="input-field" 
+                        type="text" 
+                        placeholder="Search for any IP address or domain" 
+                    />
+                    <button className="submit-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6"/></svg>
+                    </button>
+                </Form>
+                {
+                    showModal && 
+                    <div className="modal">
+                        <div className="modal-dialog">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title">Error</h5>
+                                    <button className="btn-close" onClick={handleCloseModal}>X</button>
+                                </div>
+                                <div className="modal-body">
+                                    {statusMessage}
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" onClick={handleCloseModal}>
+                                        Close
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
     );
 }
