@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useMap } from "../hook/useMap";
 import "../styles/Map.css";
+import "../styles/Image.css";
 
 interface Coordinates {
     longitude: number;
@@ -21,10 +22,6 @@ const MapContainer: React.FC<MapContainerProps> = ({longitude, latitude}) => {
     }, [longitude, latitude]);
 
     useMap(mapRef, coord);
-
-    useEffect(() => {
-        setCoord({ longitude, latitude });
-    }, [longitude, latitude]);
     
     return <div ref={mapRef} className="map-view" />
 };

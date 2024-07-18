@@ -28,6 +28,7 @@ export const useMap = (container: React.RefObject<HTMLDivElement>, coord: Coordi
         // Listener for map load events
         if(mapInstance) {
             mapInstance.on('load', () => {
+                console.log("Map loaded successfully, adding marker...");
                 generateNewMarker({
                     map: mapInstance,
                     latitude: coord.latitude,

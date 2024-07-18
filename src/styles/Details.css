@@ -1,13 +1,11 @@
 .details-wrapper {
-    background-image: url("../../images/pattern-bg-desktop.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     position: relative;
     width: 100%;
+    z-index: 1;
 }
 
 .details-container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,17 +13,8 @@
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
-
-/*
-.details-container {
-    display: grid;
-    grid-template-columns:repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    padding: 10px;
-    background-color: #FFFFFF;
-}
-*/
 
 .details-item {
     display: flex;

@@ -16,7 +16,7 @@ export const initMap = (container: HTMLDivElement, coords: [number, number]): ma
         style: 'mapbox://styles/mapbox/streets-v12',
         pitchWithRotate: false,
         center: coords,
-        zoom: 9,
+        zoom: 12,
         accessToken: MAPBOX_API_KEY,
         doubleClickZoom: false,
         attributionControl: false,
