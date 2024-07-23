@@ -1,5 +1,4 @@
 import "../styles/Details.css";
-import "../styles/Image.css";
 
 interface Props {
     ip_address: string;
@@ -16,10 +15,7 @@ interface DetailsContainerProps {
 
 const DetailsContainer: React.FC<DetailsContainerProps> = ({ ipData }) => {
     return (
-        <div className="component-main">
-            <picture className="background-image">
-                <img className="background-img" src="../../images/pattern-bg-desktop.png" alt="background image of squares" />
-            </picture>
+        <div className="main">
             <div className="details-wrapper">
                 <div className="details-container">
                     <div className="details-item">

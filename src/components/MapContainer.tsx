@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useMap } from "../hook/useMap";
 import "../styles/Map.css";
-import "../styles/Image.css";
 
 interface Coordinates {
     longitude: number;

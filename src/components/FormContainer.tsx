@@ -98,9 +98,9 @@ const FormContainer: React.FC<FormContainerProps> = ({ setIpData }) => {
 
     return (
         <div className="component-main">
-            <picture className="background-image">
+            <div className="background-image">
                 <img className="background-img" src="../../images/pattern-bg-desktop.png" alt="background image of squares" />
-            </picture>
+            </div>
             <div className="container">
                 <h4 className="title">IP Address Tracker</h4>
                 <Form className="input-group" validated={validated} onSubmit={handleSubmit}>
