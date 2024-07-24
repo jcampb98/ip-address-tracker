@@ -10,8 +10,8 @@
     justify-content: space-between;
     align-items: center;
     background-color: #FFFFFF;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px 8px rgba(0, 0, 0, 0.1);
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -35,4 +35,40 @@
 
 .details-text {
     color: hsl(0, 0%, 17%);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .details-container {
+        flex-direction: column;
+        height: 50vh;
+        padding: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        overflow: hidden;
+    }
+    
+    .details-item {
+        flex: 1;
+        border-right: none;
+        padding: 0px;
+    }
+
+    .details-item:last-child {
+        border-bottom: none;
+    }
+    
+    .details-title {
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        color: hsl(0, 0%, 59%);
+    }
+    
+    .details-text {
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        color: hsl(0, 0%, 17%);
+    }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { getEnviroments } from "../utils/getEnviroments";
 import axios, { AxiosError } from "axios";
@@ -24,9 +24,24 @@ const FormContainer: React.FC<FormContainerProps> = ({ setIpData }) => {
     const [userText, setUserText] = useState("");
     const [statusMessage, setStatusMessage] = useState("");
     const [showModal, setShowModal] = useState(false);
+    const [showMobileImage, setMobileImage] = useState(false);
+
     const signal = axios.CancelToken.source();
 
     const { IP_GEO_API_KEY } = getEnviroments();
+
+    const handleResize = () => {
+        setMobileImage(window.innerWidth <= 768); // Update state based on viewport width
+    };
+
+    useEffect(() => {
+        handleResize(); // Set initial state
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.addEventListener("resize", handleResize);
+        };
+    }, []);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setUserText(event.target.value);
@@ -99,7 +114,14 @@ const FormContainer: React.FC<FormContainerProps> = ({ setIpData }) => {
     return (
         <div className="component-main">
             <div className="background-image">
-                <img className="background-img" src="../../images/pattern-bg-desktop.png" alt="background image of squares" />
+                {       
+                    !showMobileImage && 
+                    <img className="background-img" src="../../images/pattern-bg-desktop.png" alt="background image of squares" /> 
+                }
+                { 
+                    showMobileImage && 
+                    <img className="background-img" src="../../images/pattern-bg-mobile.png" alt="background image of squares" /> 
+                }
             </div>
             <div className="container">
                 <h4 className="title">IP Address Tracker</h4>

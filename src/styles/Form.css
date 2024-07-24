@@ -144,31 +144,36 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    align-items: center;
 }
 
 .background-img {
     object-fit: cover;
     width: 100%;
-    height: 250px;
+    height: 300px;
 }
 
 @media (max-width: 768px) {
     .container {
-        background-image: url("../../images/pattern-bg-mobile.png");
+        align-items: center;
     }
     
     .input-group {
-        flex-direction: column;
-        align-items: stretch;
+        width: 100%;
+        height: 100%;
     }
 
     .input-field {
+        width: 75%;
         margin: 5px 0;
     }
 
     .submit-btn {
         margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .background-img {
+        height: 425px;
     }
 }
 

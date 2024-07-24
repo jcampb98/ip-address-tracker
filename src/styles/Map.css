@@ -21,12 +21,6 @@
 
 @media (max-width: 768px) {
     .map-view {
-        height: 600px;
-    }
-}
-
-@media (max-width: 480px) {
-    .map-view {
-        height: 400px;
+        margin-top: -250px;
     }
 }
