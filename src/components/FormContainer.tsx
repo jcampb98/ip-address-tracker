@@ -131,11 +131,11 @@ const FormContainer: React.FC<FormContainerProps> = ({ setIpData }) => {
             <div className="background-image">
                 {       
                     !showMobileImage && 
-                    <img className="background-img" src="../../images/pattern-bg-desktop.png" alt="background image of squares" /> 
+                    <img className="background-img" src="../../public/pattern-bg-desktop.png" alt="background image of squares" /> 
                 }
                 { 
                     showMobileImage && 
-                    <img className="background-img" src="../../images/pattern-bg-mobile.png" alt="background image of squares" /> 
+                    <img className="background-img" src="../../public/pattern-bg-mobile.png" alt="background image of squares" /> 
                 }
             </div>
             <div className="container">
