@@ -30,8 +30,6 @@ const FormContainer: React.FC<FormContainerProps> = ({ setIpData }) => {
 
     const { IP_GEO_API_KEY } = getEnviroments();
 
-    const defaultIPAddress: string = "8.8.8.8";
-
     const handleResize = () => {
         setMobileImage(window.innerWidth <= 768); // Update state based on viewport width
     };
@@ -46,7 +44,14 @@ const FormContainer: React.FC<FormContainerProps> = ({ setIpData }) => {
     }, []);
 
     useEffect(() => {
-        fetchData(defaultIPAddress);
+        axios.get('https://api.ipify.org?format=json')
+        .then(response => {
+            const userIpAddress = response.data.ip;
+            fetchData(userIpAddress);
+        })
+        .catch(error => {
+            console.error('Error fetching user IP address:', error);
+        });
     }, []);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
