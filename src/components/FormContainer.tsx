@@ -3,8 +3,8 @@ import { Form } from "react-bootstrap";
 import { getEnviroments } from "../utils/getEnviroments";
 import axios, { AxiosError } from "axios";
 import "../styles/Form.css";
-import DesktopImage from "../../public/pattern-bg-desktop.png";
-import MobileImage from "../../public/pattern-bg-mobile.png";
+import DesktopImage from "/pattern-bg-desktop.png";
+import MobileImage from "/pattern-bg-mobile.png";
 
 interface Props {
     ip_address: string;
