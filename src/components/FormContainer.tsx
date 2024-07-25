@@ -30,6 +30,8 @@ const FormContainer: React.FC<FormContainerProps> = ({ setIpData }) => {
 
     const { IP_GEO_API_KEY } = getEnviroments();
 
+    const defaultIPAddress: string = "8.8.8.8";
+
     const handleResize = () => {
         setMobileImage(window.innerWidth <= 768); // Update state based on viewport width
     };
@@ -41,6 +43,10 @@ const FormContainer: React.FC<FormContainerProps> = ({ setIpData }) => {
         return () => {
             window.addEventListener("resize", handleResize);
         };
+    }, []);
+
+    useEffect(() => {
+        fetchData(defaultIPAddress);
     }, []);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,7 +64,11 @@ const FormContainer: React.FC<FormContainerProps> = ({ setIpData }) => {
         setValidated(true);
         event.preventDefault();
 
-        axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${IP_GEO_API_KEY}&ipAddress=${userText}`, {
+        fetchData(userText);
+    };
+
+    const fetchData = (ipAddress: string) => {
+        axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${IP_GEO_API_KEY}&ipAddress=${ipAddress}`, {
             cancelToken: signal.token,
         })
         .then(response => {
