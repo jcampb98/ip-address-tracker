@@ -41,10 +41,9 @@
 @media (max-width: 768px) {
     .details-container {
         flex-direction: column;
-        height: 50vh;
-        padding: 0px;
-        margin-left: 10px;
-        margin-right: 10px;
+        height: 35vh;
+        padding: 10px;
+        margin: 0px 10px;
         overflow: hidden;
     }
     
