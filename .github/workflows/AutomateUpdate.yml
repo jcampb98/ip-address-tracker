@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Adds random delay to stagger jobs
+        run: sleep $(( sleep % 600 ))
+        
       - name: Check out repository
         uses: actions/checkout@v4
 
