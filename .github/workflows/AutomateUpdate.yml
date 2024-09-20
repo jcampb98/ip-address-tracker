@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Adds random delay to stagger jobs
-        run: sleep $(( sleep % 600 ))
+        run: sleep $(( RANDOM % 600 ))
         
       - name: Check out repository
         uses: actions/checkout@v4
