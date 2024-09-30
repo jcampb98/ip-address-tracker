@@ -45,7 +45,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.BOT_TOKEN }}
-          base: develop
+          base: main
           add-paths: | 
             package.json
             package-lock.json
